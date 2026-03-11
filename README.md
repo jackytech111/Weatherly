@@ -30,16 +30,14 @@ No frontend frameworks are used. The goal of this project is to practice working
 
 ## Project Structure
 
-weather-app
+weather-app/
 │
 ├── index.html
-├──  css
-  ├── style.css
-├── js
-  ├── main.js
-  └── ui.js
-  └── config.js
-├── .gitignore
+├── style.css
+│
+└── js/
+├── main.js
+└── ui.js
 
 - **main.js**  
 Handles API requests, state management, and data processing.
