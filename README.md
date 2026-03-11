@@ -29,15 +29,14 @@ You can search for any city to view the current weather conditions and upcoming 
 No frontend frameworks are used. The goal of this project is to practice working with APIs and organizing client-side JavaScript code.
 
 ## Project Structure
-
 weather-app/
 │
-├── index.html
-├── style.css
+├── index.html        # Main HTML layout
+├── style.css         # Application styles
 │
 └── js/
-├── main.js
-└── ui.js
+    ├── main.js       # API calls & state management
+    └── ui.js         # DOM rendering
 
 - **main.js**  
 Handles API requests, state management, and data processing.
