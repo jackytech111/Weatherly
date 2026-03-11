@@ -1,13 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weatherly</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    
-    <script src="./main.js></script>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="bg-gradient"></div>
+    <div class="grain"></div>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="dot"></span>
+          <span class="wordmark">Weatherly</span>
+          <span class="tag">live</span>
+        </div>
+        <div class="top-actions">
+          <button class="ghost" id="geoBtn" aria-label="Use my location">
+            Use my location
+          </button>
+          <div class="pill-switch" role="group" aria-label="Unit toggle">
+            <button class="pill active" data-unit="metric">°C</button>
+            <button class="pill" data-unit="imperial">°F</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Hyperlocal forecast with cinematic polish</p>
+          <h1>See the next sky shift in seconds.</h1>
+          <form id="searchForm" class="search">
+            <input
+              id="searchInput"
+              name="q"
+              type="search"
+              placeholder="Search any city..."
+              autocomplete="off"
+              required
+            />
+            <button class="primary" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="current card" id="currentCard">
+          <div class="current-header">
+            <div>
+              <p class="label">Location</p>
+              <h2 id="cityName">�</h2>
+              <p id="localTime" class="muted">--:--</p>
+            </div>
+            <img id="currentIcon" src="" alt="" aria-hidden="true" />
+          </div>
+          <div class="temp-row">
+            <div>
+              <p class="temp" id="currentTemp">0�</p>
+              <p class="muted" id="description">�</p>
+              <p class="muted">Feels like <span id="feelsLike">�</span></p>
+            </div>
+            <div class="range">
+              <span>H <span id="tempMax">�</span></span>
+              <span>L <span id="tempMin">�</span></span>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat">
+              <span>Wind</span><strong id="wind">�</strong>
+            </div>
+            <div class="stat">
+              <span>Humidity</span><strong id="humidity">�</strong>
+            </div>
+            <div class="stat">
+              <span>Pressure</span><strong id="pressure">�</strong>
+            </div>
+            <div class="stat">
+              <span>Visibility</span><strong id="visibility">�</strong>
+            </div>
+            <div class="stat">
+              <span>Sunrise</span><strong id="sunrise">�</strong>
+            </div>
+            <div class="stat">
+              <span>Sunset</span><strong id="sunset">�</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <article class="card stretch">
+          <div class="card-head">
+            <h3>Next 12 hours</h3>
+            <p class="muted">Scroll to preview the sky.</p>
+          </div>
+          <div class="scroll-row" id="hourlyList"></div>
+        </article>
+        <article class="card stretch">
+          <div class="card-head">
+            <h3>Next 5 days</h3>
+            <p class="muted">Highs, lows, and vibe check.</p>
+          </div>
+          <div class="days" id="dailyList"></div>
+        </article>
+      </section>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
 </html>
